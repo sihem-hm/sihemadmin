@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
+import { single } from './chat/chat-dialog/data';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'chatbot';
-}
+  single:any[]
+
+  view: any[] = [500, 500];
+
+  // options
+  showLegend = true;
+
+  colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+  };
+
+constructor(){
+  Object.assign(this,{single})
+
+}}

@@ -24,6 +24,17 @@
 
     <div  class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
                                     'to':   message.sentBy === 'user' }">
+      
+       <ngx-charts-pie-chart
+      *ngIf="message.type "
+          [view]="[400, 300]"
+          [results]="single"
+
+          [explodeSlices]="false"
+          [labels]="true"
+          [doughnut]="true">
+        </ngx-charts-pie-chart>
+
       {{ message.content }}
     </div>
 
