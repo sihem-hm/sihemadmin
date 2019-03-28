@@ -1,5 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
-import { single } from './chat/chat-dialog/data';
+import { data } from './chat/chat-dialog/data';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { single } from './chat/chat-dialog/data';
 })
 export class AppComponent {
   title = 'chatbot';
-  single:any[]
+  data:any[]
 
   view: any[] = [500, 500];
 
@@ -21,6 +21,6 @@ export class AppComponent {
   };
 
 constructor(){
-  Object.assign(this,{single})
+  Object.assign(this,{data})
 
 }}

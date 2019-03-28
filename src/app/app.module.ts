@@ -11,8 +11,10 @@ import {MenuItem} from 'primeng/api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
-import { ChartjsModule } from '@ctrl/ngx-chartjs';
+
 import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {ChartModule} from 'primeng/chart';
+
 
 
             //api
@@ -30,7 +32,9 @@ import {NgxChartsModule} from '@swimlane/ngx-charts';
     ChatModule,
     AccordionModule,
     BrowserAnimationsModule,
-    ChartjsModule,
+
+    ChartModule
+
     
 
 

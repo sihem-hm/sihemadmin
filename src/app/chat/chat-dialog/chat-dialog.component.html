@@ -2,57 +2,57 @@
 <!-- comment 1 start -->
 <!-- div class = "w3-container w3-cell w3-border w3-round-large"-->
 <div class = "w3-container w3-cell w3-topbar w3-bottombar w3-leftbar w3-rightbar w3-border-blue"> 
-<br>
-<div class="b-agent-demo_header-wrapper"></div>
-  <div class = "w3-container w3-bar w3-border  w3-light-blue">
-    <a href="#" class="w3-bar-item w3-button">Your Message</a>
-  <img src="https://fahimfarhan.github.io/css-js-expert-engine/img/olis.png" alt="OLIS">
-
-  </div>
   <br>
-  <div class="b-agent-demo_header-description"></div>
-
-  <head>
-  <!-- your css link does not work because in my laptop , the path doesnot exist. you should fix it---->
-    <link rel="stylesheet"  href="C:\Users\DELL\Documents\chatbot\src\app\chat\chat-dialog\chat-dialog.component.css" /></head>
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <div class="b-agent-demo_header-wrapper"></div>
+    <div class = "w3-container w3-bar w3-border  w3-light-blue">
+      <a href="#" class="w3-bar-item w3-button">Your Message</a>
+    <img src="https://fahimfarhan.github.io/css-js-expert-engine/img/olis.png" alt="OLIS">
   
-
-  <!--label for="nameField">Your Message</label-->
-<div class="w3-container w3-bar  w3-cell-bottom">
-  <ng-container *ngFor="let message of messages | async">
-
-    <div  class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
-                                    'to':   message.sentBy === 'user' }">
-      
-       <ngx-charts-pie-chart
-      *ngIf="message.type "
-          [view]="[400, 300]"
-          [results]="single"
-
-          [explodeSlices]="false"
-          [labels]="true"
-          [doughnut]="true">
-        </ngx-charts-pie-chart>
-
-      {{ message.content }}
     </div>
-
-  </ng-container>
-
-</div>
-
-
-<br>
-<div class = "w3-container">
-<input  [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
-<br>
-  <div class = "w3-container w3-display">
-  <br>
-    <button (click)="sendMessage()" class=" w3-light-blue w3-right">Send</button>
+    <br>
+    <div class="b-agent-demo_header-description"></div>
+  
+    <head>
+    <!-- your css link does not work because in my laptop , the path doesnot exist. you should fix it---->
+      <link rel="stylesheet"  href="C:\Users\DELL\Documents\chatbot\src\app\chat\chat-dialog\chat-dialog.component.css" /></head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+  
+    <!--label for="nameField">Your Message</label-->
+  <div class="w3-container w3-bar  w3-cell-bottom">
+    <ng-container *ngFor="let message of messages | async">
+  
+      <div  class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                      'to':   message.sentBy === 'user' }">
+        
+         <ngx-charts-pie-chart
+        *ngIf="message.type "
+            [view]="[400, 300]"
+            [results]="op"
+  
+            [explodeSlices]="false"
+            [labels]="true"
+            [doughnut]="true">
+          </ngx-charts-pie-chart>
+    <p>. </p>
+        {{ message.content }}
+      </div>
+  
+    </ng-container>
+  
   </div>
-</div>
-<br>
-</div>
-
-<!-- comment 1 end -->
+  
+  
+  <br>
+  <div class = "w3-container">
+  <input  [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+  <br>
+    <div class = "w3-container w3-display">
+    <br>
+      <button (click)="sendMessage()" class=" w3-light-blue w3-right">Send</button>
+    </div>
+  </div>
+  <br>
+  </div>
+  
+  <!-- comment 1 end -->

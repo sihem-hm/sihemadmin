@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChatService, Message } from '../chat.service';
 import { Observable } from 'rxjs';
 import {NgxChartsModule} from '@swimlane/ngx-charts';
-import {single} from "./data"
+//import {single} from "./data"
 
 import {scan} from 'rxjs/operators';
 
@@ -17,7 +17,8 @@ import {scan} from 'rxjs/operators';
 })
 export class ChatDialogComponent implements OnInit {
 single:any[]
-
+widgets:any;
+op = [];
   view: any[] = [300, 300];
 
   // options
@@ -36,7 +37,8 @@ single:any[]
   formValue: string;
 
   constructor(public chat: ChatService) {
-    Object.assign(this,{single})
+   Object.assign(this,this.widgets)
+   
    }
 
   ngOnInit() {
@@ -44,9 +46,33 @@ single:any[]
     this.messages = this.chat.conversation.asObservable()
       .pipe(scan((acc, val) => acc.concat(val) ));
   }
+  
 
-  sendMessage() {
+  sendMessage() { 
+    
     this.chat.converse(this.formValue);
+    let str = this.formValue.split("give me the ")[1];
+    this.chat.gettest(str).subscribe(data=>{
+      this.widgets=JSON.parse(JSON.stringify(data));
+      const that= this;
+      return new Promise((resolve, reject) => {
+       that.op = []
+                var key = Object.keys(that.widgets);
+                
+                console.log(key);
+                
+                key.forEach(e => {
+                  that. op.push({"name":e,"value":that.widgets[e]})
+                    
+                });
+                console.log(that.op);
+               
+                
+                
+            
+                })
+          
+    });
     this.formValue = '';
   }
 

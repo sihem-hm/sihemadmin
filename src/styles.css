@@ -6,14 +6,14 @@
   font-weight: bold;
 }
 .message.to {
-  background-color: #33cc33;
+  background-color: #2095FE;
   color: #fff;
   margin-left: 100px;
   text-align: right;
 }
 .message.from {
-  background-color: #2095FE;
-  color: #fff;
+  background-color: #E5E4E9;
+  color: #363636;
   margin-right: 100px;
 
 }
