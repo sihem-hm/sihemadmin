@@ -1,0 +1,46 @@
+
+  <!-- your css link does not work because in my laptop , the path doesnot exist. you should fix it---->
+    <link rel="stylesheet"  href="C:\Users\DELL\Documents\chatbot\src\app\chat\chat-dialog\chat-dialog.component.css" /></head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  
+<div class = "w3-container">
+
+<div class="w3-card-4" style="width:50%;">
+    <header class="w3-container w3-blue">
+        <div class="b-agent-demo_header-wrapper"></div>
+        <div class = "w3-container w3-bar w3-border  w3-light-blue">
+            <a href="#" class="w3-bar-item w3-button">Your Message</a>
+        <a href="#" class="w3-bar-item w3-button w3-right">OLIS</a>
+
+        </div>
+        <div class="b-agent-demo_header-description"></div>
+      
+    </header>
+
+    <div class="w3-container">
+              <!--label for="nameField">Your Message</label-->
+            <div class="w3-container w3-bar  w3-cell-bottom">
+            <ng-container *ngFor="let message of messages | async">
+
+                <div  class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                                'to':   message.sentBy === 'user' }">
+                {{ message.content }}
+                </div>
+
+            </ng-container>
+
+            </div>     
+    </div>
+
+    <footer class="w3-container w3-blue">
+            <div class = "w3-container">
+            <input  [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+
+            <div class = "w3-container w3-display">
+                <button (click)="sendMessage()" class=" w3-light-blue">Send</button>
+            </div>
+            </div>      
+    </footer>
+  </div>
+  
+</div>
